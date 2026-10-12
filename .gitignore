@@ -1,0 +1,12 @@
+# Node modules
+node_modules/
+
+# File Database SQLite lokal
+*.db
+
+# File Lingkungan & Konfigurasi Rahasia
+.env
+frontend/config.js
+
+# Log
+*.log

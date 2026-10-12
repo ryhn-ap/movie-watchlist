@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html lang="id">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>Watchlist Film</title>
+
+        <!-- Tailwind CSS via CDN -->
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+
+    <body class="bg-gray-900 text-white min-h-screen p-8">
+        <div class="max-w-5xl mx-auto">
+            <h1 class="text-3xl font-bold mb-6 text-indigo-400">Pencari Film dan Watchlist</h1>
+
+            <!-- Form Pencarian Film via TMDB API -->
+            <div class="flex gap-2 mb-8">
+               <input
+                   type="text"
+                   id="searchInput"
+                   placeholder="Ketik judul film (contoh : Avangers) ..."
+                   class="flex-1 px-4 py-2 rounded bg-gray-800 border border-gray-700 text-white focus:outline-none focus:border-indigo-500"
+               >
+               <button
+                   onclick="searchMovie()"
+                   class="bg-indigo-600 hover:bg-indigo-700 px-6 py-2 rounded font-semibold transition"
+               >Cari Film</button>
+               
+               <button
+                   onclick="clearSearchResults()"
+                   class="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded font-semibold transition text-gray-200"
+               >Clear Search Result</button>
+            </div>
+
+            <!-- Container hasil pencarian -->
+             <h2 class="text-xl font-semibold mb-4 text-gray-300">Hasil Pencarian TMDB</h2>
+             <div id="searchResults" class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12"></div>
+            
+             <!-- Container watchlist saya -->
+            <hr class="border-gray-800 my-8">
+            <h2 class="text-xl font-semibold mb-4 text-emerald-400">Daftar Watchlist Saya</h2>
+            <div id="watchlistResults" class="grid grid-cols-2 md:grid-cols-4 gap-4"></div>
+        </div>
+
+        <script src="config.js"></script>
+        <script src="app.js"></script>
+    </body>
+</html>
